@@ -1,44 +1,69 @@
 
-// hasVisualizer
-// hasCeilingMic
-// hasLecternLamp
-const rooms = [
-  "SHA030",
-  "SHA101",
-  "SHA102",
-  "SHA103",
-  "SHA104",
-  "SHA105",
-  "SHA106",
-  "SHA107",
-  "SHA108",
-  "SHA109",
-  "HHBUG01",
-  "HHBUG03",
-  "HHBUG04",
-  "HHBUG05",
-  "HHBUG06",
-  "HHBUG09",
-  "HHBUG10",
-  "HHBUG11",
-  "HHBUG12",
-  "HHBUG13",
-  "HHB101",
-  "HHB105",
-  "HHB106",
-  "HHB107",
-  "HHB109",
-  "HHB110",
-  "HHB201",
+interface IRoom {
+  name: string,
+  hasVisualizer: boolean,
+  hasCeilingMic: boolean,
+  hasLecternLamp: boolean
+}
+
+class Room extends Object implements IRoom {
+    public name: string;
+    public hasVisualizer: boolean;
+    public hasCeilingMic: boolean;
+    public hasLecternLamp: boolean;
+
+    constructor(room: IRoom) {
+        super();
+        this.name = room.name;
+        this.hasVisualizer = room.hasVisualizer;
+        this.hasCeilingMic = room.hasCeilingMic;
+        this.hasLecternLamp = room.hasLecternLamp;
+    }
+
+    override toString () {
+        return `${this.hasVisualizer} ${this.hasCeilingMic} ${this.hasLecternLamp}`;
+    }
+}
+
+const rooms: Room[] = [
+  new Room({name: "SHA030", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false }),
+  new Room({name: "SHA101", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false }),
+  new Room({name: "SHA102", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false }),
+  new Room({name: "SHA103", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false }),
+  new Room({name: "SHA104", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false }),
+  new Room({name: "SHA105", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false }),
+  new Room({name: "SHA106", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false }),
+  new Room({name: "SHA107", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false }),
+  new Room({name: "SHA108", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false }),
+  new Room({name: "SHA109", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false }),
+  new Room({name: "HHBUG01", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false }),
+  new Room({name: "HHBUG03", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false }),
+  new Room({name: "HHBUG04", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false }),
+  new Room({name: "HHBUG05", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false }),
+  new Room({name: "HHBUG06", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false }),
+  new Room({name: "HHBUG09", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false }),
+  new Room({name: "HHBUG10", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false }),
+  new Room({name: "HHBUG11", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false }),
+  new Room({name: "HHBUG12", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false }),
+  new Room({name: "HHBUG13", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false }),
+  new Room({name: "HHB101", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false }),
+  new Room({name: "HHB105", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false }),
+  new Room({name: "HHB106", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false }),
+  new Room({name: "HHB107", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false }),
+  new Room({name: "HHB109", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false }),
+  new Room({name: "HHB110", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false }),
+  new Room({name: "HHB201", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false }),
 ];
 
 ((document: HTMLDocument) => {
-  const element = document.querySelector("#question-list > div:nth-child(2)");
-  if (element) {
-    const intputElementCollection: HTMLCollectionOf<HTMLInputElement> = element.getElementsByTagName("input");
-    if (intputElementCollection.length == 1) {
-      const c: HTMLInputElement = intputElementCollection[0];
-      c.value = `123`;
-    }
-  }
+  // download script here
+  // SHA
+  // HHB Ground floor
+  // HHB 1st floor
+  // HHB 2nd floor
+  rooms.forEach(room => {
+    const div = document.createElement("div");
+    div.innerText = room.toString();
+    document.body.append(div);
+  })
 })(document)
