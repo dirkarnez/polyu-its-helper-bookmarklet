@@ -1,1 +1,0 @@
-function o(n,l,c,a){alert(n);const e=document.querySelector("#question-list > div:nth-child(2)");if(e){const t=e.getElementsByTagName("input");if(t.length==1){const i=t[0];i.value="123"}}}export{o as main};
