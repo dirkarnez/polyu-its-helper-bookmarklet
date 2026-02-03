@@ -1,4 +1,9 @@
 
+import("./lib/index").then(a => {
+  debugger;
+  console.log(`${a.main}`)
+});
+
 interface IRoom {
   name: string,
   hasVisualizer: boolean,
