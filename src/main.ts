@@ -1,9 +1,4 @@
 
-import("./lib/index").then(a => {
-  debugger;
-  console.log(`${a.main}`)
-});
-
 interface IRoom {
   name: string,
   hasVisualizer: boolean,
@@ -60,15 +55,51 @@ const rooms: Room[] = [
   new Room({name: "HHB201", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false }),
 ];
 
-((document: HTMLDocument) => {
+const downloadTextAsFile = (content: string): string => {
+  const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
+  return URL.createObjectURL(blob);
+};
+
+
+(async (document: HTMLDocument) => {
+  const module = await import("./lib/index");
+  // main(name: string, hasVisualizer: boolean, hasCeilingMic: boolean, hasLecternLamp: boolean) {
+  const scriptContent = `${module.main}`;
+  
   // download script here
   // SHA
   // HHB Ground floor
   // HHB 1st floor
   // HHB 2nd floor
-  rooms.forEach(room => {
+  {
     const div = document.createElement("div");
-    div.innerText = room.toString();
-    document.body.append(div);
+  }
+  {
+
+  }
+  {
+
+  }
+  {
+    const a = document.createElement("a");
+    a.innerText = "MS Form";
+    a.href = `https://forms.office.com/pages/responsepage.aspx?id=YPc3j4exgUm4L-Xcb1vPRLIJd97ywmRAhyrhdPw8yBNUNk9QNVVFRVRYV1RKWFY4RFJMUEtSNTVVVi4u`;
+    document.body.append(a);
+    document.body.append(document.createElement("br"));
+  }
+  
+  rooms.forEach(room => {
+    const a = document.createElement("a");
+    a.innerText = room.toString();
+    a.href = downloadTextAsFile(`[InternetShortcut]
+URL=javascript:(() => {${scriptContent.replaceAll("\n", "")}; ${module.main.name}("123", false, false)})();`);
+    a.download = "bookmark.url";
+    a.addEventListener("click", (e) => {
+        setTimeout(() => {
+          URL.revokeObjectURL(a.href);
+        }, 0);
+    })
+    document.body.append(a);
+    document.body.append(document.createElement("br"));
   })
 })(document)
