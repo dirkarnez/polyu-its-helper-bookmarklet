@@ -1,6 +1,7 @@
 [polyu-its-helper-bookmarklet](https://dirkarnez.github.io/polyu-its-helper-bookmarklet/dist)
 ==============================================================================================================
 ```js
+Array.length > 1 ? n + (n - 1), odd number index
 const delay = () => new Promise(res => {
         setTimeout(() => {
             console.log("delay");
