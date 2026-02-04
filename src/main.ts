@@ -25,13 +25,14 @@ class Room extends Object implements IRoom {
     }
 }
 
+
 const rooms: Room[] = [
   new Room({name: "SHA030", hasVisualizer: true, hasCeilingMic: false, hasLecternLamp: false }),
   new Room({name: "SHA101", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false }),
   new Room({name: "SHA102", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false }),
   new Room({name: "SHA103", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false }),
   new Room({name: "SHA104", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false }),
-  new Room({name: "SHA105", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false }),
+  new Room({name: "SHA105", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false, confirmed: true, numberOfWirelessMics: 2 }),
   new Room({name: "SHA106", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false }),
   new Room({name: "SHA107", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false }),
   new Room({name: "SHA108", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false }),
