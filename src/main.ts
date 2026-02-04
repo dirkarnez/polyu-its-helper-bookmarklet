@@ -38,7 +38,7 @@ const rooms: Room[] = [
   new Room({name: "SHA109", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false, confirmed: true, numberOfWirelessMics: 2 }),
   new Room({name: "HHBUG01", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false }),
   new Room({name: "HHBUG03", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false }),
-  new Room({name: "HHBUG04", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false }),
+  new Room({name: "HHBUG04", hasVisualizer: false, hasCeilingMic: false, hasLecternLamp: false, confirmed: true, numberOfWirelessMics: 2 }),
   new Room({name: "HHBUG05", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false }),
   new Room({name: "HHBUG06", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false }),
   new Room({name: "HHBUG09", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false }),
