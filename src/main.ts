@@ -21,7 +21,7 @@ class Room extends Object implements IRoom {
     }
 
     override toString () {
-        return `${this.hasVisualizer} ${this.hasCeilingMic} ${this.hasLecternLamp}`;
+        return `${this.name} (visualizer: ${this.hasVisualizer} ceiling mic: ${this.hasCeilingMic} lectern lamp: ${this.hasLecternLamp})`;
     }
 }
 
@@ -55,9 +55,8 @@ const rooms: Room[] = [
   new Room({name: "HHB201", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false }),
 ];
 
-const downloadTextAsFile = (content: string): string => {
-  const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
-  return URL.createObjectURL(blob);
+const textToObjectURL = (content: string): string => {
+  return URL.createObjectURL(new Blob([content], { type: 'text/plain;charset=utf-8' }));
 };
 
 
@@ -91,7 +90,7 @@ const downloadTextAsFile = (content: string): string => {
   rooms.forEach(room => {
     const a = document.createElement("a");
     a.innerText = room.toString();
-    a.href = downloadTextAsFile(`[InternetShortcut]
+    a.href = textToObjectURL(`[InternetShortcut]
 URL=javascript:(() => {${scriptContent.replaceAll("\n", "")}; ${module.main.name}("123", false, false)})();`);
     a.download = "bookmark.url";
     a.addEventListener("click", (e) => {
