@@ -11,6 +11,19 @@ declare global {
 
 export function main(name: string, hasVisualizer: boolean, hasCeilingMic: boolean, hasLecternLamp: boolean) {
   const nthQuestionInput = (nth: number): HTMLElement | null => document.querySelector(`#question-list > div:nth-child(${nth}) input`);
+  const monitor = () => {
+    var elementToObserve = document.querySelector(`#question-list`);
+    
+    // 创建一个叫 `observer` 的新 `MutationObserver` 实例，
+    // 并将回调函数传给它
+    var observer = new MutationObserver(function () {
+      console.log("callback that runs when observer is triggered");
+    });
+    
+    // 在 MutationObserver 实例上调用 `observe` 方法，
+    // 并将要观察的元素与选项传给此方法
+    observer.observe(elementToObserve, { subtree: true, childList: true });
+  }
   
   [
     {
