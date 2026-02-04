@@ -1,4 +1,27 @@
 [polyu-its-helper-bookmarklet](https://dirkarnez.github.io/polyu-its-helper-bookmarklet/dist)
 ==============================================================================================================
+```js
+const serial = funcs =>
+    funcs.reduce((promise, func) =>
+        promise.then(result => func().then(Array.prototype.concat.bind(result))), Promise.resolve([]))
+
+serial([
+    () => new Promise(res => {
+        setTimeout(() => {
+            console.log("1");
+            res(1);
+        }, 2000);
+    }),
+    () => new Promise(res => {
+        setTimeout(() => {
+            console.log("2");
+            res(2);
+        }, 2000);
+    }),
+]).then(a => {
+    // a = [1, 2];
+    debugger;
+})
+```
 ### Notes
 - Generate bookmark on web ui
