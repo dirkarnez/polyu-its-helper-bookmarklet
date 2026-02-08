@@ -90,7 +90,7 @@ const textToObjectURL = (content: string): string => {
     const a = document.createElement("a");
     a.innerText = room.toString();
     a.href = textToObjectURL(`[InternetShortcut]
-URL=javascript:(() => {${scriptContent.replaceAll("\n", "")}; ${module.main.name}(${room.name}, ${room.hasVisualizer}, ${room.hasCeilingMic}, ${room.hasLecternLamp}, ${room.numberOfWirelessMics}); })();`);
+URL=javascript:(() => {${scriptContent.replaceAll("\n", "")}; ${module.main.name}("${room.name}", ${room.hasVisualizer}, ${room.hasCeilingMic}, ${room.hasLecternLamp}, ${room.numberOfWirelessMics}); })();`);
     a.download = `${room.name}.url`;
     a.addEventListener("click", (e) => {
         setTimeout(() => {

@@ -42,6 +42,12 @@ export async function main(roomName: string, hasVisualizer: boolean, hasCeilingM
       index: 4, /* Room number*/
       data: `${roomName}`
     }
+    {
+      index: 5, /* Reporting type */
+      /* document.querySelectorAll(`#question-list > div:nth-child(5) input`)[1].click() 
+      document.querySelectorAll(`#question-list > div:nth-child(6) to 12`)
+      */
+    }
   ].forEach(({index, data}) => {
     const element = nthQuestionInput(index) as HTMLInputElement;
 
