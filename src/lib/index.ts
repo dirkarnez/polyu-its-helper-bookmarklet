@@ -1,16 +1,13 @@
-// MyLibrary.hello("dsf")
-declare global {
-  interface Document {
-    customProperty?: string;
-    customMethod?(): void;
-  }
-}
+export async function main(roomName: string, hasVisualizer: boolean, hasCeilingMic: boolean, hasLecternLamp: boolean, numberOfWirelessMics: number) {
+  const delay = (): Promise<void> => new Promise((res) => {
+      setTimeout(() => {
+          console.log("delay");
+          res();
+      }, 2000);
+  });
 
-
-// document.querySelector("#question-list > div:nth-child(5) span").innerText
-
-export function main(name: string, hasVisualizer: boolean, hasCeilingMic: boolean, hasLecternLamp: boolean) {
   const nthQuestionInput = (nth: number): HTMLElement | null => document.querySelector(`#question-list > div:nth-child(${nth}) input`);
+  
   const outdateAlert = () => {
     alert("This script is outdated");
   };
@@ -23,29 +20,27 @@ export function main(name: string, hasVisualizer: boolean, hasCeilingMic: boolea
       outdateAlert();
     }
   }
-  
+
   const monitor = () => {
     var elementToObserve = document.querySelector(`#question-list`);
-    
-    // 创建一个叫 `observer` 的新 `MutationObserver` 实例，
-    // 并将回调函数传给它
-    var observer = new MutationObserver(function () {
-      console.log("callback that runs when observer is triggered");
-    });
-    
-    // 在 MutationObserver 实例上调用 `observe` 方法，
-    // 并将要观察的元素与选项传给此方法
-    observer.observe(elementToObserve, { subtree: true, childList: true });
+
+    if (!!elementToObserve) {
+      var observer = new MutationObserver(function () {
+        console.log("callback that runs when observer is triggered");
+      });
+
+      observer.observe(elementToObserve, { subtree: true, childList: true });
+    }
   }
   
   [
     {
-      index: 2,
+      index: 2, /* Your name */
       data: "Alex"
     },
     {
-      index: 3,
-      data: "Alex"
+      index: 4, /* Room number*/
+      data: `${roomName}`
     }
   ].forEach(({index, data}) => {
     const element = nthQuestionInput(index) as HTMLInputElement;
@@ -66,35 +61,5 @@ export function main(name: string, hasVisualizer: boolean, hasCeilingMic: boolea
       });
     }
   });
-  
-  
-  // const input = nthQuestion(0);
-  // const input = nthQuestion(0);
-  // const input = nthQuestion(0);
-  // const input = nthQuestion(0);
 }
 
-/*
-const element = document.querySelector(`#question-list > div:nth-child(3) input`)
-const event = new KeyboardEvent('keydown', {
-    code: 'Enter',
-    key: 'Enter',
-    charCode: 13,
-    keyCode: 13,
-    view: window,
-    bubbles: true
-})
-element.dispatchEvent(event);
-
-setTimeout(() => {
-    document.activeElement.dispatchEvent(new KeyboardEvent('keydown', {
-    code: 'Enter',
-    key: 'Enter',
-    charCode: 13,
-    keyCode: 13,
-    view: window,
-    bubbles: true
-}));
-document.activeElement.dispatchEvent(new Event('input', { bubbles: true }));
-}, 200)
-*/

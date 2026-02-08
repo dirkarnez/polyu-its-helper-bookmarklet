@@ -2,12 +2,7 @@
 ==============================================================================================================
 ```js
 Array.length > 1 ? n + (n - 1), odd number index
-const delay = () => new Promise(res => {
-        setTimeout(() => {
-            console.log("delay");
-            res(1);
-        }, 2000);
-    });
+
 
 const serial = funcs =>
     funcs.reduce((promise, func) =>
