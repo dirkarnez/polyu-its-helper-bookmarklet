@@ -26,33 +26,33 @@ class Room extends Object implements IRoom {
 
 
 const rooms: Room[] = [
-  new Room({name: "SHA030", hasVisualizer: true, hasCeilingMic: false, hasLecternLamp: false }),
-  new Room({name: "SHA101", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false, numberOfWirelessMics: 2 }),
-  new Room({name: "SHA102", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: true, numberOfWirelessMics: 2 }),
-  new Room({name: "SHA103", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false }),
-  new Room({name: "SHA104", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false }),
-  new Room({name: "SHA105", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false, numberOfWirelessMics: 2 }),
-  new Room({name: "SHA106", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false, numberOfWirelessMics: 2 }),
-  new Room({name: "SHA107", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false }),
-  new Room({name: "SHA108", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false, numberOfWirelessMics: 2 }),
-  new Room({name: "SHA109", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false, numberOfWirelessMics: 2 }),
-  new Room({name: "HHBUG01", hasVisualizer: false, hasCeilingMic: false, hasLecternLamp: false, numberOfWirelessMics: 2 }),
-  new Room({name: "HHBUG03", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false }),
-  new Room({name: "HHBUG04", hasVisualizer: false, hasCeilingMic: false, hasLecternLamp: false, numberOfWirelessMics: 2 }),
-  new Room({name: "HHBUG05", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false }),
-  new Room({name: "HHBUG06", hasVisualizer: false, hasCeilingMic: false, hasLecternLamp: false, numberOfWirelessMics: 2 }),
-  new Room({name: "HHBUG09", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false }),
-  new Room({name: "HHBUG10", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false }),
-  new Room({name: "HHBUG11", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false }),
-  new Room({name: "HHBUG12", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false }),
-  new Room({name: "HHBUG13", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false, numberOfWirelessMics: 2 }),
-  new Room({name: "HHB101", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false }),
-  new Room({name: "HHB105", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false }),
-  new Room({name: "HHB106", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false, numberOfWirelessMics: 2 }),
-  new Room({name: "HHB107", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false, numberOfWirelessMics: 2 }),
-  new Room({name: "HHB109", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false, numberOfWirelessMics: 2 }),
-  new Room({name: "HHB110", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false, numberOfWirelessMics: 2 }),
-  new Room({name: "HHB201", hasVisualizer: false, hasCeilingMic: false, hasLecternLamp: false, numberOfWirelessMics: 2 }),
+  new Room({ name: "SHA030", hasVisualizer: true, hasCeilingMic: false, hasLecternLamp: false }),
+  new Room({ name: "SHA101", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false, numberOfWirelessMics: 2 }),
+  new Room({ name: "SHA102", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: true, numberOfWirelessMics: 2 }),
+  new Room({ name: "SHA103", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false }),
+  new Room({ name: "SHA104", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false }),
+  new Room({ name: "SHA105", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false, numberOfWirelessMics: 2 }),
+  new Room({ name: "SHA106", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false, numberOfWirelessMics: 2 }),
+  new Room({ name: "SHA107", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false }),
+  new Room({ name: "SHA108", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false, numberOfWirelessMics: 2 }),
+  new Room({ name: "SHA109", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false, numberOfWirelessMics: 2 }),
+  new Room({ name: "HHBUG01", hasVisualizer: false, hasCeilingMic: false, hasLecternLamp: false, numberOfWirelessMics: 2 }),
+  new Room({ name: "HHBUG03", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false }),
+  new Room({ name: "HHBUG04", hasVisualizer: false, hasCeilingMic: false, hasLecternLamp: false, numberOfWirelessMics: 2 }),
+  new Room({ name: "HHBUG05", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false }),
+  new Room({ name: "HHBUG06", hasVisualizer: false, hasCeilingMic: false, hasLecternLamp: false, numberOfWirelessMics: 2 }),
+  new Room({ name: "HHBUG09", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false }),
+  new Room({ name: "HHBUG10", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false }),
+  new Room({ name: "HHBUG11", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false }),
+  new Room({ name: "HHBUG12", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false }),
+  new Room({ name: "HHBUG13", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false, numberOfWirelessMics: 2 }),
+  new Room({ name: "HHB101", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false }),
+  new Room({ name: "HHB105", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false }),
+  new Room({ name: "HHB106", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false, numberOfWirelessMics: 2 }),
+  new Room({ name: "HHB107", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false, numberOfWirelessMics: 2 }),
+  new Room({ name: "HHB109", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false, numberOfWirelessMics: 2 }),
+  new Room({ name: "HHB110", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false, numberOfWirelessMics: 2 }),
+  new Room({ name: "HHB201", hasVisualizer: false, hasCeilingMic: false, hasLecternLamp: false, numberOfWirelessMics: 2 }),
 ];
 
 const textToObjectURL = (content: string): string => {
@@ -92,7 +92,7 @@ const textToObjectURL = (content: string): string => {
     a.innerText = room.toString();
     a.href = textToObjectURL(`[InternetShortcut]
 URL=javascript:(() => {${scriptContent.replaceAll("\n", "")}; ${module.main.name}("123", false, false); })();`);
-    a.download = "bookmark.url";
+    a.download = `${room.name}.url`;
     a.addEventListener("click", (e) => {
         setTimeout(() => {
           URL.revokeObjectURL(a.href);
