@@ -6,6 +6,20 @@ export async function main(roomName: string, hasVisualizer: boolean, hasCeilingM
       }, 2000);
   });
 
+  const getElementByContainingVisibleText = (text: string) => {
+    const elements = Array.from(document.querySelectorAll(`#question-list > div`))
+    .filter((element: Element) => {
+      return (element as HTMLElement).innerText.toUpperCase().indexOf(text.toUpperCase()) > -1;
+    });
+
+    if (Array.isArray(elements) && elements.length == 1) {
+      return elements[0];
+    } else {
+      outdateAlert();
+      return null;
+    }
+  }
+
   const nthQuestionInput = (nth: number): HTMLElement | null => document.querySelector(`#question-list > div:nth-child(${nth}) input`);
   
   const outdateAlert = () => {
@@ -35,13 +49,13 @@ export async function main(roomName: string, hasVisualizer: boolean, hasCeilingM
   
   [
     {
-      index: 2, /* Your name */
+      containsVisibleText: `Your name`, /* Your name */
       data: "Alex"
     },
     {
       index: 4, /* Room number*/
       data: `${roomName}`
-    }
+    },
     {
       index: 5, /* Reporting type */
       /* document.querySelectorAll(`#question-list > div:nth-child(5) input`)[1].click() 
