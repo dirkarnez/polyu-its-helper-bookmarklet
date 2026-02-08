@@ -67,7 +67,6 @@ const textToObjectURL = (content: string): string => {
   const module = await import("./lib/index");
   // main(name: string, hasVisualizer: boolean, hasCeilingMic: boolean, hasLecternLamp: boolean) {
   const scriptContent = `${module.main}`;
-  
   // download script here
   // SHA
   // HHB Ground floor
@@ -75,24 +74,20 @@ const textToObjectURL = (content: string): string => {
   // HHB 2nd floor
   {
     const div = document.createElement("div");
-  }
-  {
-
-  }
-  {
-
-  }
-  {
+    div.style.padding = `5px`;
+    const h1 = document.createElement("h1");
     const a = document.createElement("a");
     a.innerText = "MS Form";
     a.href = `https://forms.office.com/pages/responsepage.aspx?id=YPc3j4exgUm4L-Xcb1vPRLIJd97ywmRAhyrhdPw8yBNUNk9QNVVFRVRYV1RKWFY4RFJMUEtSNTVVVi4u`;
-    document.body.append(a);
-    document.body.append(document.createElement("br"));
+    h1.appendChild(a);
+    div.appendChild(h1);
+    appContainer.appendChild(div);
   }
   
   rooms.forEach(room => {
+    const div = document.createElement("div");
+    div.style.padding = `5px`;
     const a = document.createElement("a");
-    a.style.padding = `10px`;
     a.innerText = room.toString();
     a.href = textToObjectURL(`[InternetShortcut]
 URL=javascript:(() => {${scriptContent.replaceAll("\n", "")}; ${module.main.name}("123", false, false); })();`);
@@ -102,7 +97,7 @@ URL=javascript:(() => {${scriptContent.replaceAll("\n", "")}; ${module.main.name
           URL.revokeObjectURL(a.href);
         }, 0);
     })
-    appContainer.append(a);
-    appContainer.append(document.createElement("br"));
+    div.appendChild(a);
+    appContainer.appendChild(div);
   })
 })(document.getElementById("app")!)

@@ -11,6 +11,19 @@ declare global {
 
 export function main(name: string, hasVisualizer: boolean, hasCeilingMic: boolean, hasLecternLamp: boolean) {
   const nthQuestionInput = (nth: number): HTMLElement | null => document.querySelector(`#question-list > div:nth-child(${nth}) input`);
+  const outdateAlert = () => {
+    alert("This script is outdated");
+  };
+
+  const submit = () => {
+    const submitButtons = Array.from(document.getElementsByTagName("button")).filter(btn => `${btn.innerText}`.toUpperCase() == "SUBMIT");
+    if (Array.isArray(submitButtons) && submitButtons.length == 1) {
+      submitButtons[0].click();
+    } else {
+      outdateAlert();
+    }
+  }
+  
   const monitor = () => {
     var elementToObserve = document.querySelector(`#question-list`);
     
@@ -38,7 +51,7 @@ export function main(name: string, hasVisualizer: boolean, hasCeilingMic: boolea
     const element = nthQuestionInput(index) as HTMLInputElement;
 
     if (!element) {
-      alert("This script is outdated")
+      outdateAlert();
     } else {
       data.split("").forEach(character => {
         const event = new KeyboardEvent('keydown', {
