@@ -2,7 +2,8 @@ interface IRoom {
   name: string,
   hasVisualizer: boolean,
   hasCeilingMic: boolean,
-  hasLecternLamp: boolean
+  hasLecternLamp: boolean,
+  numberOfWirelessMics: number
 }
 
 class Room extends Object implements IRoom {
@@ -10,6 +11,7 @@ class Room extends Object implements IRoom {
     public hasVisualizer: boolean;
     public hasCeilingMic: boolean;
     public hasLecternLamp: boolean;
+    public numberOfWirelessMics: number
 
     constructor(room: IRoom) {
         super();
@@ -17,6 +19,7 @@ class Room extends Object implements IRoom {
         this.hasVisualizer = room.hasVisualizer;
         this.hasCeilingMic = room.hasCeilingMic;
         this.hasLecternLamp = room.hasLecternLamp;
+        this.numberOfWirelessMics = room.numberOfWirelessMics;
     }
 
     override toString () {
@@ -26,28 +29,28 @@ class Room extends Object implements IRoom {
 
 
 const rooms: Room[] = [
-  new Room({ name: "SHA030", hasVisualizer: true, hasCeilingMic: false, hasLecternLamp: false }),
+  new Room({ name: "SHA030", hasVisualizer: true, hasCeilingMic: false, hasLecternLamp: false, numberOfWirelessMics: NaN }),
   new Room({ name: "SHA101", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false, numberOfWirelessMics: 2 }),
   new Room({ name: "SHA102", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: true, numberOfWirelessMics: 2 }),
-  new Room({ name: "SHA103", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false }),
-  new Room({ name: "SHA104", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false }),
+  new Room({ name: "SHA103", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false, numberOfWirelessMics: NaN }),
+  new Room({ name: "SHA104", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false, numberOfWirelessMics: NaN }),
   new Room({ name: "SHA105", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false, numberOfWirelessMics: 2 }),
   new Room({ name: "SHA106", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false, numberOfWirelessMics: 2 }),
-  new Room({ name: "SHA107", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false }),
+  new Room({ name: "SHA107", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false, numberOfWirelessMics: NaN }),
   new Room({ name: "SHA108", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false, numberOfWirelessMics: 2 }),
   new Room({ name: "SHA109", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false, numberOfWirelessMics: 2 }),
   new Room({ name: "HHBUG01", hasVisualizer: false, hasCeilingMic: false, hasLecternLamp: false, numberOfWirelessMics: 2 }),
-  new Room({ name: "HHBUG03", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false }),
+  new Room({ name: "HHBUG03", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false, numberOfWirelessMics: NaN }),
   new Room({ name: "HHBUG04", hasVisualizer: false, hasCeilingMic: false, hasLecternLamp: false, numberOfWirelessMics: 2 }),
-  new Room({ name: "HHBUG05", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false }),
+  new Room({ name: "HHBUG05", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false, numberOfWirelessMics: NaN }),
   new Room({ name: "HHBUG06", hasVisualizer: false, hasCeilingMic: false, hasLecternLamp: false, numberOfWirelessMics: 2 }),
-  new Room({ name: "HHBUG09", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false }),
-  new Room({ name: "HHBUG10", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false }),
-  new Room({ name: "HHBUG11", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false }),
-  new Room({ name: "HHBUG12", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false }),
+  new Room({ name: "HHBUG09", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false, numberOfWirelessMics: NaN }),
+  new Room({ name: "HHBUG10", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false, numberOfWirelessMics: NaN }),
+  new Room({ name: "HHBUG11", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false, numberOfWirelessMics: NaN }),
+  new Room({ name: "HHBUG12", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false, numberOfWirelessMics: NaN }),
   new Room({ name: "HHBUG13", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false, numberOfWirelessMics: 2 }),
-  new Room({ name: "HHB101", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false }),
-  new Room({ name: "HHB105", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false }),
+  new Room({ name: "HHB101", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false, numberOfWirelessMics: NaN }),
+  new Room({ name: "HHB105", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false, numberOfWirelessMics: NaN }),
   new Room({ name: "HHB106", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false, numberOfWirelessMics: 2 }),
   new Room({ name: "HHB107", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false, numberOfWirelessMics: 2 }),
   new Room({ name: "HHB109", hasVisualizer: false, hasCeilingMic: true, hasLecternLamp: false, numberOfWirelessMics: 2 }),
@@ -60,7 +63,7 @@ const textToObjectURL = (content: string): string => {
 };
 
 
-(async (document: HTMLDocument) => {
+(async (appContainer: HTMLElement) => {
   const module = await import("./lib/index");
   // main(name: string, hasVisualizer: boolean, hasCeilingMic: boolean, hasLecternLamp: boolean) {
   const scriptContent = `${module.main}`;
@@ -89,6 +92,7 @@ const textToObjectURL = (content: string): string => {
   
   rooms.forEach(room => {
     const a = document.createElement("a");
+    a.style.padding = `10px`;
     a.innerText = room.toString();
     a.href = textToObjectURL(`[InternetShortcut]
 URL=javascript:(() => {${scriptContent.replaceAll("\n", "")}; ${module.main.name}("123", false, false); })();`);
@@ -98,7 +102,7 @@ URL=javascript:(() => {${scriptContent.replaceAll("\n", "")}; ${module.main.name
           URL.revokeObjectURL(a.href);
         }, 0);
     })
-    document.body.append(a);
-    document.body.append(document.createElement("br"));
+    appContainer.append(a);
+    appContainer.append(document.createElement("br"));
   })
-})(document)
+})(document.getElementById("app")!)
