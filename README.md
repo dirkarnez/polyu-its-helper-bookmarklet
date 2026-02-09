@@ -26,5 +26,15 @@ serial([
     debugger;
 });
 ```
+```js
+(async () => {
+  console.log(await Promise.resolve(3));
+  console.log(await Promise.all([
+    Promise.resolve(1),
+    Promise.resolve(2),
+    Promise.resolve(3)
+  ]));
+})();
+```
 ### Notes
 - Generate bookmark on web ui
