@@ -36,5 +36,8 @@ serial([
   ]));
 })();
 ```
+### TODOs
+- https://www.npmjs.com/package/@testing-library/user-event
+    - https://testing-library.com/docs/user-event/keyboard
 ### Notes
 - Generate bookmark on web ui
