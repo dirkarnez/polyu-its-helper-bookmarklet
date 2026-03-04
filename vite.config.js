@@ -4,6 +4,6 @@
  * @type {import('vite').UserConfig}
  */
 const config = {
-  base: "/polyu-its-helper-bookmarklet/dist/"
+  base: "/polyu-its-helper-bookmarklet/"
 }
 export default config;
