@@ -1,5 +1,5 @@
-[polyu-its-helper-bookmarklet](https://dirkarnez.github.io/polyu-its-helper-bookmarklet/dist)
-==============================================================================================================
+[polyu-its-helper-bookmarklet](https://dirkarnez.github.io/polyu-its-helper-bookmarklet)
+========================================================================================
 ```js
 Array.length > 1 ? n + (n - 1), odd number index
 
